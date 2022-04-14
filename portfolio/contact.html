@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="contact.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">Ayat<span>\</span>Rahman.</a></div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skill.html">Skill</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br><br><br><br><br><br>
+    <nav class="card">
+        <p class="desc">
+            <div class="skillset"><ul class="skill">
+                <li>+8801784065359</li>
+                <li>ayat.dihan6593@gmail.com</li>
+                <li>Sector - 9, Uttara, Dhaka</li>
+                
+            </ul>
+        </div>
+        </p>
+    </nav>
+    <div class="survey">Quick survey!</div>
+    <div>
+        <form aciton ="https://www.google.com" name="myForm" onsubmit="return validateForm()" method="post">
+            <div class="formdesign" id="name">
+                Name : <input type="text" name="name" placeholder="Enter your name"><b><span class="error"></span></b>
+            </div>
+            <div class="formdesign" id="email">
+                Email : <input type="email" name="email" placeholder="Enter a valid mail"><b><span class="error"></span></b>
+            </div>
+            <div class="formdesign" id="rate">
+                Rating : <input type="number" name="rate" placeholder="Rate 1-10"><b><span class="error"></span></b>
+            </div>
+            <div class="formdesign" id="number">
+                Phone : <input type="number" name="cell" required placeholder="Enter 11 digit phone number"><b><span class="error"></span></b>
+            </div>
+            <div>
+                <button type="submit">Send</button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- <script type="text/javascript" src="contact.js"></script> -->
+    <script>
+        function clearErrors(){
+            errors = document.getElementsByClassName('error');
+            for(let item of errors)
+                {
+                    item.innerHTML = "";
+                }
+            }
+        function seterror(id, error){
+            element = document.getElementById(id);
+            element.getElementsByClassName('error')[0].innerHTML = error;
+        }
+
+        function validateForm(){
+            var returnval = true;
+            clearErrors();
+            var name = document.forms['myForm']["name"].value;
+
+        if(name.length<4){
+            seterror("name","  *Name is too short!");
+            returnval = false;
+        }
+        var celll = document.forms['myForm']["cell"].value;        
+        if(celll.length>11){
+            seterror("number","  *Maximum 11 digits!!!");
+            returnval = false;
+        }
+        var raat = document.forms['myForm']["rate"].value; 
+        if(raat>10){
+            seterror("rate","  *Maximum rating 10!");
+            returnval = false;
+        }
+        return returnval;
+    }
+    </script>
+</body>
+
+</html>
